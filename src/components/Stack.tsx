@@ -24,13 +24,13 @@ export function Stack() {
             transition={{ duration: 0.5, delay: i * 0.06 }}
             className="group relative bg-background p-6 transition-colors duration-500 hover:bg-card/40"
           >
-            <div className="mb-4 flex items-center justify-between font-mono text-[10px] tracking-[0.3em] text-amber-dim">
+            <div className="mb-4 flex items-center justify-between gap-3 font-mono text-[10px] tracking-[0.22em] text-amber-dim sm:tracking-[0.3em]">
               <span>{g.label}</span>
               <span className="text-warm-gray">0{i + 1}</span>
             </div>
             <ul className="space-y-1.5 font-mono text-sm text-warm-beige">
               {g.items.map((it) => (
-                <li key={it} className="flex items-center gap-2">
+                <li key={it} className="flex min-w-0 items-center gap-2 break-words">
                   <span className="text-amber-glow opacity-60 group-hover:opacity-100">›</span>
                   {it}
                 </li>

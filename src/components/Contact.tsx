@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Contact() {
   return (
-    <Section id="contact" className="pb-40">
+    <Section id="contact" className="pb-20 md:pb-32 lg:pb-40">
       <SectionTitle index="06" title="CONTACT" subtitle="// open.channel" />
 
       <motion.h3
@@ -12,7 +12,7 @@ export function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="amber-glow-text font-mono text-4xl leading-[1.1] tracking-tight text-warm-beige md:text-6xl"
+        className="amber-glow-text font-mono text-3xl leading-[1.1] tracking-tight text-warm-beige sm:text-4xl md:text-6xl"
       >
         Let's build something <span className="text-amber-glow">real.</span>
       </motion.h3>
@@ -28,7 +28,7 @@ export function Contact() {
         idea — I'm always open to building impactful solutions.
       </motion.p>
 
-      <div className="mt-16 grid gap-px bg-border/60 md:grid-cols-3">
+      <div className="mt-10 grid gap-px bg-border/60 md:mt-16 md:grid-cols-3">
         {[
           { icon: MapPin, label: "LOCATION", value: "Ahmedabad, Gujarat, India", href: undefined },
           { icon: Mail, label: "EMAIL", value: "s.k.dudhiyawala@gmail.com", href: "mailto:s.k.dudhiyawala@gmail.com" },
@@ -41,7 +41,7 @@ export function Contact() {
                 <Icon className="h-3.5 w-3.5" />
                 {c.label}
               </div>
-              <div className="font-mono text-sm text-warm-beige transition-colors group-hover:text-amber-glow">
+              <div className="break-words font-mono text-sm text-warm-beige transition-colors group-hover:text-amber-glow">
                 {c.value}
               </div>
             </>
@@ -67,7 +67,7 @@ export function Contact() {
         })}
       </div>
 
-      <div className="mt-24 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 font-mono text-[10px] tracking-[0.3em] text-warm-gray md:flex-row">
+      <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-center font-mono text-[10px] tracking-[0.22em] text-warm-gray sm:tracking-[0.3em] md:mt-24 md:flex-row">
         <span>© 2026 SHABBIR DUDHIYA</span>
         <span className="cursor-blink">SYSTEM ONLINE</span>
         <span>BUILT WITH ☕ + PYTHON</span>

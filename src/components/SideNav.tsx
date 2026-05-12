@@ -30,7 +30,7 @@ export function SideNav() {
 
   return (
     <nav
-      className="fixed top-0 right-0 z-50 hidden h-screen w-40 border-l border-amber-dim/25 bg-background/35 md:flex lg:w-44"
+      className="fixed top-0 right-0 z-50 hidden h-screen w-40 border-l border-amber-dim/25 bg-background/35 lg:flex lg:w-44"
       aria-label="Section navigation"
     >
       <div className="my-auto flex w-full flex-col items-end pr-8 lg:pr-10">

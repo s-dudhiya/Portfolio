@@ -46,16 +46,16 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: i * 0.08 }}
-            className="group relative grid grid-cols-12 items-center gap-4 bg-background px-4 py-8 transition-colors duration-500 hover:bg-card/40 md:px-8"
+            className="group relative grid grid-cols-12 items-start gap-4 bg-background px-4 py-6 transition-colors duration-500 hover:bg-card/40 sm:py-8 md:items-center md:px-8"
           >
             <span className="col-span-2 font-mono text-xs text-amber-dim md:col-span-1">{p.id}</span>
-            <div className="col-span-10 md:col-span-4">
-              <div className="mb-1 font-mono text-[10px] tracking-[0.3em] text-warm-gray">{p.tag}</div>
-              <h3 className="font-mono text-xl text-warm-beige transition-colors group-hover:text-amber-glow md:text-2xl">
+            <div className="col-span-10 min-w-0 md:col-span-4">
+              <div className="mb-1 font-mono text-[10px] tracking-[0.2em] text-warm-gray sm:tracking-[0.3em]">{p.tag}</div>
+              <h3 className="break-words font-mono text-lg text-warm-beige transition-colors group-hover:text-amber-glow sm:text-xl md:text-2xl">
                 {p.name}
               </h3>
             </div>
-            <p className="col-span-12 font-mono text-xs text-warm-gray md:col-span-4 md:text-sm">{p.desc}</p>
+            <p className="col-span-12 min-w-0 break-words font-mono text-xs text-warm-gray md:col-span-4 md:text-sm">{p.desc}</p>
             <div className="col-span-10 flex flex-wrap gap-2 md:col-span-2">
               {p.stack.map((s) => (
                 <span

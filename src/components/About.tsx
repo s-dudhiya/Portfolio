@@ -34,7 +34,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="space-y-5 font-mono text-sm leading-[1.8] text-warm-beige md:col-span-8"
+          className="min-w-0 space-y-5 break-words font-mono text-sm leading-[1.8] text-warm-beige md:col-span-8"
         >
           <p>
             I'm a Python developer passionate about building scalable backend systems, automation

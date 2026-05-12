@@ -145,12 +145,12 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full px-6 pt-3 md:px-12 md:pt-4"
+      className="relative min-h-screen w-full overflow-hidden px-5 pt-3 sm:px-6 md:px-8 md:pt-4 lg:px-12"
     >
       {/* Top bar */}
-      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 leading-none lg:gap-x-6">
         <div
-          className="flex-1 basis-0 font-mono text-sm font-bold leading-none tracking-[0.2em] text-warm-beige"
+          className="order-1 font-mono text-xs font-bold leading-none tracking-[0.2em] text-warm-beige sm:text-sm lg:flex-1 lg:basis-0"
           style={{ fontFamily: "var(--font-hero)" }}
         >
           init
@@ -159,7 +159,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="amber-glow-text mt-4 min-w-0 shrink whitespace-nowrap text-center text-[clamp(0.82rem,2.55vw,3rem)] font-normal leading-none text-warm-beige"
+          className="amber-glow-text order-3 mt-3 min-w-0 basis-full text-center text-[clamp(0.95rem,5.1vw,3rem)] font-normal leading-tight text-warm-beige [overflow-wrap:anywhere] lg:order-2 lg:mt-0 lg:basis-auto lg:whitespace-nowrap"
           style={{ fontFamily: "var(--font-hero)", letterSpacing: "0.04em" }}
         >
           SHABBIR.DUDHIYA
@@ -169,7 +169,7 @@ export function Hero() {
           target="_blank"
           rel="noreferrer"
           download
-          className="flex-1 basis-0 text-right font-mono text-xs leading-none tracking-[0.3em] text-warm-beige transition-colors hover:text-amber-glow"
+          className="order-2 text-right font-mono text-[11px] leading-none tracking-[0.24em] text-warm-beige transition-colors hover:text-amber-glow sm:text-xs sm:tracking-[0.3em] lg:order-3 lg:flex-1 lg:basis-0"
         >
           [ RESUME ]
         </a>
@@ -191,7 +191,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-1 font-mono text-xs tracking-[0.4em] text-warm-beige/90 sm:text-sm md:mt-6"
+          className="mx-auto mt-4 max-w-full font-mono text-[11px] tracking-[0.28em] text-warm-beige/90 sm:text-xs sm:tracking-[0.4em] md:mt-5 md:text-sm"
         >
           {"{ PYTHON DEVELOPER }"}
         </motion.p>
@@ -202,7 +202,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.9 }}
-        className="hero-coder-scene relative mx-auto mt-6 max-w-2xl md:mt-7"
+        className="hero-coder-scene relative mx-auto mt-5 w-full max-w-[min(100%,42rem)] md:mt-6"
         onMouseLeave={handleSceneLeave}
         onMouseMove={handleSceneMove}
         ref={sceneRef}

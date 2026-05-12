@@ -33,7 +33,7 @@ function Index() {
     <div className="grain-overlay vignette relative min-h-screen w-full overflow-x-hidden bg-background">
       <CustomCursor />
       <SideNav />
-      <main className="relative w-full md:pr-40 lg:pr-44 xl:pr-48">
+      <main className="relative w-full lg:pr-44 xl:pr-48">
         <Hero />
         <About />
         <Projects />

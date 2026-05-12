@@ -111,6 +111,13 @@
     font-family: var(--font-mono);
     font-feature-settings: "ss01", "cv01";
     -webkit-font-smoothing: antialiased;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   body {
@@ -449,6 +456,13 @@
 
   .hero-scan-noise {
     opacity: 0.09;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-monitor-code {
+    font-size: clamp(2.8px, 0.95vw, 3.8px);
+    opacity: 0.58;
   }
 }
 

@@ -13,11 +13,11 @@ export function SectionTitle({ index, title, subtitle }: SectionTitleProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6 }}
-      className="mb-12 flex items-end justify-between border-b border-border/60 pb-4"
+      className="mb-8 flex flex-col items-start gap-3 border-b border-border/60 pb-4 sm:mb-10 md:mb-12 md:flex-row md:items-end md:justify-between"
     >
-      <div className="flex items-baseline gap-4">
+      <div className="flex min-w-0 items-baseline gap-3 sm:gap-4">
         <span className="font-mono text-xs text-amber-dim">{index}</span>
-        <h2 className="amber-glow-text font-mono text-2xl tracking-[0.15em] text-warm-beige md:text-3xl">
+        <h2 className="amber-glow-text min-w-0 font-mono text-xl tracking-[0.12em] text-warm-beige sm:text-2xl md:text-3xl md:tracking-[0.15em]">
           {title}
         </h2>
       </div>
@@ -32,7 +32,7 @@ export function SectionTitle({ index, title, subtitle }: SectionTitleProps) {
 
 export function Section({ id, children, className = "" }: { id: string; children: React.ReactNode; className?: string }) {
   return (
-    <section id={id} className={`relative px-6 py-32 md:px-16 ${className}`}>
+    <section id={id} className={`relative px-5 py-14 sm:px-6 sm:py-16 md:px-8 md:py-24 lg:px-12 xl:px-16 ${className}`}>
       <div className="mx-auto max-w-6xl">{children}</div>
     </section>
   );

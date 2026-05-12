@@ -34,7 +34,7 @@ export function Notes() {
             className="group cursor-pointer bg-background p-6 transition-colors duration-500 hover:bg-card/40"
             data-cursor="hover"
           >
-            <div className="mb-4 flex items-center justify-between font-mono text-[10px] tracking-[0.3em] text-amber-dim">
+            <div className="mb-4 flex items-center justify-between gap-3 font-mono text-[10px] tracking-[0.22em] text-amber-dim sm:tracking-[0.3em]">
               <span>{n.date}</span>
               <span className="opacity-0 transition-opacity group-hover:opacity-100">→ READ</span>
             </div>

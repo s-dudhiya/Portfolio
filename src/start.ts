@@ -20,3 +20,7 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
 export const startInstance = createStart(() => ({
   requestMiddleware: [errorMiddleware],
 }));
+
+if (typeof document !== "undefined") {
+  void import("./client");
+}

@@ -76,10 +76,10 @@ export function Terminal() {
 
   return (
     <div
-      className="terminal-glow relative mx-auto max-w-3xl border border-border/60 bg-terminal/95 shadow-2xl"
+      className="terminal-glow relative mx-auto w-full max-w-3xl overflow-hidden border border-border/60 bg-terminal/95 shadow-2xl"
       onClick={() => inputRef.current?.focus()}
     >
-      <div className="flex items-center justify-between border-b border-border/60 px-4 py-2">
+      <div className="flex items-center justify-between border-b border-border/60 px-3 py-2 sm:px-4">
         <span className="font-mono text-xs text-warm-beige/80">&gt; terminal.exe</span>
         <div className="flex items-center gap-3 text-warm-gray">
           <span className="font-mono text-xs leading-none">_</span>
@@ -90,10 +90,10 @@ export function Terminal() {
 
       <div
         ref={scrollRef}
-        className="h-[340px] overflow-y-auto p-5 font-mono text-[13px] leading-relaxed"
+        className="h-[260px] overflow-y-auto p-3 font-mono text-[12px] leading-relaxed sm:h-[300px] sm:p-4 sm:text-[13px] md:h-[340px] md:p-5 md:text-[14px]"
       >
         {lines.map((l, i) => (
-          <div key={i} className="whitespace-pre-wrap">
+          <div key={i} className="max-w-full whitespace-pre-wrap break-words">
             {l.kind === "in" ? (
               <>
                 <span className="text-amber-glow amber-glow-text">{PROMPT}</span>{" "}
@@ -107,8 +107,8 @@ export function Terminal() {
           </div>
         ))}
 
-        <div className="mt-1 flex items-center">
-          <span className="text-amber-glow amber-glow-text">{PROMPT}</span>
+        <div className="mt-1 flex min-w-0 flex-wrap items-center">
+          <span className="max-w-full break-words text-amber-glow amber-glow-text">{PROMPT}</span>
           <span>&nbsp;</span>
           <input
             ref={inputRef}
@@ -117,7 +117,7 @@ export function Terminal() {
             onKeyDown={(e) => e.key === "Enter" && submit()}
             spellCheck={false}
             autoComplete="off"
-            className="flex-1 border-none bg-transparent font-mono text-[13px] text-warm-beige caret-amber-glow outline-none"
+            className="min-w-[8ch] flex-1 border-none bg-transparent font-mono text-[12px] text-warm-beige caret-amber-glow outline-none sm:text-[13px] md:text-[14px]"
           />
           <span className="cursor-blink" />
         </div>
