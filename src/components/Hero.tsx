@@ -6,7 +6,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import coderImg from "@/assets/coder-workspace.png";
 import { Terminal } from "./Terminal";
 
@@ -247,31 +246,7 @@ export function Hero() {
         <Terminal />
       </motion.div>
 
-      {/* Footer */}
-      <footer className="mt-20 flex flex-col gap-6 border-t border-border/40 pt-8 pb-10 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <div className="mb-4 font-mono text-xs text-warm-gray">
-            // find me on
-          </div>
-          <div className="flex items-center gap-5 text-warm-beige">
-            <a href="#" aria-label="GitHub" className="transition-colors hover:text-amber-glow">
-              <Github className="h-5 w-5" />
-            </a>
-            <a href="#" aria-label="LinkedIn" className="transition-colors hover:text-amber-glow">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="#" aria-label="Twitter" className="transition-colors hover:text-amber-glow">
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a href="#" aria-label="Email" className="transition-colors hover:text-amber-glow">
-              <Mail className="h-5 w-5" />
-            </a>
-          </div>
-        </div>
-        <div className="font-mono text-xs text-warm-gray">
           © 2024 • System v1.0
-        </div>
-      </footer>
     </section>
   );
 }
