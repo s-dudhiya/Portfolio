@@ -1,15 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Cormorant+Garamond:wght@400;500&family=IBM+Plex+Mono:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;700&family=Major+Mono+Display&family=Noto+Sans+JP:wght@300;400&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap');
+
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=IBM+Plex+Mono:wght@300;400;500;600&family=VT323&family=Cormorant+Garamond:wght@400;500&family=Noto+Sans+JP:wght@300;400&display=swap');
-
 @theme inline {
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-plex: "IBM Plex Mono", ui-monospace, monospace;
   --font-pixel: "VT323", "JetBrains Mono", monospace;
+  --font-hero: "Press Start 2P", "Silkscreen", "JetBrains Mono", monospace;
 
   --radius-sm: 2px;
   --radius-md: 3px;

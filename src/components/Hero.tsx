@@ -145,24 +145,39 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full px-6 pt-8 md:px-12 md:pt-10"
+      className="relative min-h-screen w-full px-6 pt-3 md:px-12 md:pt-4"
     >
       {/* Top bar */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
         <div
-          className="font-serif text-2xl tracking-tight text-warm-beige"
-          style={{ fontFamily: "'Cormorant Garamond', 'Times New Roman', serif" }}
+          className="flex-1 basis-0 font-mono text-sm font-bold leading-none tracking-[0.2em] text-warm-beige"
+          style={{ fontFamily: "var(--font-hero)" }}
         >
-          .S
+          init
         </div>
-        <button className="font-mono text-xs tracking-[0.3em] text-warm-beige transition-colors hover:text-amber-glow">
-          [ MENU ]
-        </button>
+        <motion.h1
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="amber-glow-text mt-4 min-w-0 shrink whitespace-nowrap text-center text-[clamp(0.82rem,2.55vw,3rem)] font-normal leading-none text-warm-beige"
+          style={{ fontFamily: "var(--font-hero)", letterSpacing: "0.04em" }}
+        >
+          SHABBIR.DUDHIYA
+        </motion.h1>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          download
+          className="flex-1 basis-0 text-right font-mono text-xs leading-none tracking-[0.3em] text-warm-beige transition-colors hover:text-amber-glow"
+        >
+          [ RESUME ]
+        </a>
       </div>
 
       {/* Hero center content */}
-      <div className="mx-auto mt-20 max-w-5xl text-center md:mt-24">
-        <motion.p
+      <div className="mx-auto max-w-5xl text-center">
+        {/* <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -171,25 +186,14 @@ export function Hero() {
           コードを書く。問題を解決し、
           <br />
           価値を生み出す。
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="amber-glow-text mt-10 text-5xl font-normal tracking-[0.04em] text-warm-beige sm:text-6xl md:text-7xl lg:text-[96px]"
-          style={{ fontFamily: "'VT323', monospace", letterSpacing: "0.02em" }}
-        >
-          SHABBIR.DUDHIYA
-        </motion.h1>
-
+        </motion.p> */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-6 font-mono text-xs tracking-[0.4em] text-warm-beige/90 sm:text-sm"
+          className="mt-1 font-mono text-xs tracking-[0.4em] text-warm-beige/90 sm:text-sm md:mt-6"
         >
-          {"{ PYTHON AUTOMATION ENGINEER & FULL-STACK DEVELOPER }"}
+          {"{ PYTHON DEVELOPER }"}
         </motion.p>
       </div>
 
@@ -198,7 +202,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.9 }}
-        className="hero-coder-scene relative mx-auto mt-12 max-w-2xl"
+        className="hero-coder-scene relative mx-auto mt-6 max-w-2xl md:mt-7"
         onMouseLeave={handleSceneLeave}
         onMouseMove={handleSceneMove}
         ref={sceneRef}
@@ -245,8 +249,6 @@ export function Hero() {
       >
         <Terminal />
       </motion.div>
-
-          © 2024 • System v1.0
     </section>
   );
 }
