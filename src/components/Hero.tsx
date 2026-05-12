@@ -1,9 +1,148 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
-import coderImg from "@/assets/coder-workspace.jpg";
+import coderImg from "@/assets/coder-workspace.png";
 import { Terminal } from "./Terminal";
 
+const pythonCode = [
+  "import time",
+  "",
+  "coffee = True",
+  "ideas = []",
+  "",
+  "def build():",
+  '    ideas.append("solve problems")',
+  '    ideas.append("help people")',
+  '    ideas.append("build products")',
+  "",
+  "while coffee:",
+  "    build()",
+  "    time.sleep(0.5)",
+  "",
+  'print("Building something meaningful...")',
+];
+
+function HeroMonitorTyping() {
+  const reduceMotion = useReducedMotion();
+  const [lineIndex, setLineIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setLineIndex(pythonCode.length);
+      setCharIndex(0);
+      return;
+    }
+
+    if (lineIndex >= pythonCode.length) {
+      const restart = window.setTimeout(() => {
+        setLineIndex(0);
+        setCharIndex(0);
+      }, 5200);
+
+      return () => window.clearTimeout(restart);
+    }
+
+    const currentLine = pythonCode[lineIndex];
+    const lineComplete = charIndex >= currentLine.length;
+    const delay = lineComplete
+      ? currentLine.length === 0
+        ? 210
+        : 430
+      : 28 + ((charIndex + lineIndex) % 4) * 13;
+
+    const timer = window.setTimeout(() => {
+      if (lineComplete) {
+        setLineIndex((value) => value + 1);
+        setCharIndex(0);
+      } else {
+        setCharIndex((value) => value + 1);
+      }
+    }, delay);
+
+    return () => window.clearTimeout(timer);
+  }, [charIndex, lineIndex, reduceMotion]);
+
+  const visibleLines = reduceMotion
+    ? pythonCode
+    : [
+        ...pythonCode.slice(0, lineIndex),
+        lineIndex < pythonCode.length ? pythonCode[lineIndex].slice(0, charIndex) : "",
+      ];
+
+  return (
+    <div className="hero-monitor-code" aria-hidden="true">
+      {visibleLines.map((line, index) => (
+        <span className="hero-type-line" key={`${index}-${line}`}>
+          <span className="hero-line-number">{String(index + 1).padStart(2, "0")}</span>
+          <span>{line || "\u00a0"}</span>
+        </span>
+      ))}
+      <span className="hero-monitor-cursor" />
+    </div>
+  );
+}
+
 export function Hero() {
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+  const depthX = useMotionValue(0);
+  const depthY = useMotionValue(0);
+  const imageX = useSpring(useTransform(depthX, (value) => value * 8), {
+    stiffness: 90,
+    damping: 22,
+    mass: 0.35,
+  });
+  const imageY = useSpring(useTransform(depthY, (value) => value * 8), {
+    stiffness: 90,
+    damping: 22,
+    mass: 0.35,
+  });
+  const overlayX = useSpring(useTransform(depthX, (value) => value * 12), {
+    stiffness: 75,
+    damping: 20,
+    mass: 0.35,
+  });
+  const overlayY = useSpring(useTransform(depthY, (value) => value * 12), {
+    stiffness: 75,
+    damping: 20,
+    mass: 0.35,
+  });
+  const codeX = useSpring(useTransform(depthX, (value) => value * 4), {
+    stiffness: 110,
+    damping: 24,
+    mass: 0.3,
+  });
+  const codeY = useSpring(useTransform(depthY, (value) => value * 4), {
+    stiffness: 110,
+    damping: 24,
+    mass: 0.3,
+  });
+
+  function handleSceneMove(event: MouseEvent<HTMLDivElement>) {
+    if (reduceMotion || window.matchMedia("(max-width: 767px)").matches) return;
+
+    const bounds = sceneRef.current?.getBoundingClientRect();
+    if (!bounds) return;
+
+    const relativeX = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const relativeY = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    depthX.set(relativeX);
+    depthY.set(relativeY);
+  }
+
+  function handleSceneLeave() {
+    depthX.set(0);
+    depthY.set(0);
+  }
+
   return (
     <section
       id="home"
@@ -60,19 +199,41 @@ export function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.9 }}
-        className="relative mx-auto mt-12 max-w-2xl"
+        className="hero-coder-scene relative mx-auto mt-12 max-w-2xl"
+        onMouseLeave={handleSceneLeave}
+        onMouseMove={handleSceneMove}
+        ref={sceneRef}
       >
-        <img
+        <motion.img
           src={coderImg}
           alt="Developer at workstation, ASCII art"
           width={1024}
           height={1024}
           className="mx-auto h-auto w-full select-none"
           style={{
+            x: imageX,
+            y: imageY,
             maskImage:
               "radial-gradient(ellipse 75% 75% at center, black 55%, transparent 100%)",
           }}
         />
+        <motion.div
+          className="hero-coder-overlays pointer-events-none absolute inset-0"
+          style={{
+            x: overlayX,
+            y: overlayY,
+          }}
+        >
+          <div className="hero-monitor-glow" />
+          <div className="hero-lamp-glow" />
+          <div className="hero-keyboard-glow" />
+          <motion.div className="hero-monitor-depth" style={{ x: codeX, y: codeY }}>
+            <HeroMonitorTyping />
+          </motion.div>
+          <div className="hero-pixel-shimmer" />
+          <div className="hero-scan-noise" />
+          <div className="hero-image-vignette" />
+        </motion.div>
       </motion.div>
 
       {/* Terminal */}
