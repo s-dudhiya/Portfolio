@@ -150,8 +150,8 @@ export function Hero() {
       {/* Top bar */}
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 leading-none lg:gap-x-6">
         <div
-          className="order-1 font-mono text-xs font-bold leading-none tracking-[0.2em] text-warm-beige sm:text-sm lg:flex-1 lg:basis-0"
-          style={{ fontFamily: "var(--font-hero)" }}
+          className="order-1 font-mono text-xs font-bold leading-none tracking-[0.1em] text-warm-beige sm:text-sm lg:flex-1 lg:basis-0"
+          // style={{ fontFamily: "var(--font-hero)" }}
         >
           init
         </div>
