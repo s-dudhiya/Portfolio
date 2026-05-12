@@ -159,7 +159,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="amber-glow-text order-3 mt-3 min-w-0 basis-full text-center text-[clamp(0.95rem,5.1vw,3rem)] font-normal leading-tight text-warm-beige [overflow-wrap:anywhere] lg:order-2 lg:mt-0 lg:basis-auto lg:whitespace-nowrap"
+          className="amber-glow-text order-3 mt-3 min-w-0 basis-full text-center text-[clamp(0.9rem,2.8vw,2.2rem)] font-normal leading-tight text-warm-beige [overflow-wrap:anywhere] lg:order-2 lg:mt-0 lg:basis-auto lg:whitespace-nowrap"
           style={{ fontFamily: "var(--font-hero)", letterSpacing: "0.04em" }}
         >
           SHABBIR.DUDHIYA
@@ -169,7 +169,7 @@ export function Hero() {
           target="_blank"
           rel="noreferrer"
           download
-          className="order-2 text-right font-mono text-[11px] leading-none tracking-[0.24em] text-warm-beige transition-colors hover:text-amber-glow sm:text-xs sm:tracking-[0.3em] lg:order-3 lg:flex-1 lg:basis-0"
+          className="order-2 text-right font-mono text-[10px] leading-none tracking-[0.24em] text-warm-beige transition-colors hover:text-amber-glow sm:text-xs sm:tracking-[0.3em] lg:order-3 lg:flex-1 lg:basis-0"
         >
           [ RESUME ]
         </a>
