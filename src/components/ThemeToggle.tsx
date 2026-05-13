@@ -1,30 +1,9 @@
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
-
-type Theme = "dark" | "light";
-
-const STORAGE_KEY = "portfolio-theme";
-
-function getInitialTheme(): Theme {
-  if (typeof document === "undefined") return "dark";
-  return document.documentElement.classList.contains("theme-light") ? "light" : "dark";
-}
-
-function applyTheme(theme: Theme) {
-  const root = document.documentElement;
-
-  root.classList.remove("theme-dark", "theme-light");
-  root.classList.add(`theme-${theme}`);
-}
+import { useTheme } from "@/hooks/use-theme";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const { theme, setTheme } = useTheme();
   const isLight = theme === "light";
-
-  useEffect(() => {
-    applyTheme(theme);
-    window.localStorage.setItem(STORAGE_KEY, theme);
-  }, [theme]);
 
   return (
     <button

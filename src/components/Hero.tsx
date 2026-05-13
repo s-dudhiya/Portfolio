@@ -6,7 +6,9 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import coderImg from "@/assets/coder-workspace.png";
+import coderDarkImg from "@/assets/coder-workspace-dark.png";
+import coderLightImg from "@/assets/coder-workspace-light.png";
+import { useTheme } from "@/hooks/use-theme";
 import { Terminal } from "./Terminal";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -89,6 +91,7 @@ function HeroMonitorTyping() {
 }
 
 export function Hero() {
+  const { theme } = useTheme();
   const sceneRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
   const depthX = useMotionValue(0);
@@ -211,7 +214,7 @@ export function Hero() {
         ref={sceneRef}
       >
         <motion.img
-          src={coderImg}
+          src={theme === "light" ? coderLightImg : coderDarkImg}
           alt="Developer at workstation, ASCII art"
           width={1024}
           height={1024}
