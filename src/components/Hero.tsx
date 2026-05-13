@@ -229,14 +229,17 @@ export function Hero() {
         <motion.div
           className="hero-coder-overlays pointer-events-none absolute inset-0"
           style={{
-            x: overlayX,
-            y: overlayY,
+            x: theme === "light" ? imageX : overlayX,
+            y: theme === "light" ? imageY : overlayY,
           }}
         >
           <div className="hero-monitor-glow" />
           <div className="hero-lamp-glow" />
           <div className="hero-keyboard-glow" />
-          <motion.div className="hero-monitor-depth" style={{ x: codeX, y: codeY }}>
+          <motion.div
+            className="hero-monitor-depth"
+            style={{ x: theme === "light" ? 0 : codeX, y: theme === "light" ? 0 : codeY }}
+          >
             <HeroMonitorTyping />
           </motion.div>
           <div className="hero-pixel-shimmer" />

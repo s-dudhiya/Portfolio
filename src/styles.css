@@ -183,10 +183,10 @@
   --hero-overlay-opacity: 0.74;
   --hero-overlay-blend: multiply;
   --hero-vignette-color: rgba(244, 232, 208, 0.42);
-  --hero-monitor-text: #E8D4AD;
-  --hero-monitor-line: rgba(232, 212, 173, 0.52);
-  --hero-monitor-cursor: #E8D4AD;
-  --hero-monitor-backing: rgba(0, 0, 0, 0.22);
+  --hero-monitor-text: #3A2618;
+  --hero-monitor-line: rgba(74, 46, 22, 0.48);
+  --hero-monitor-cursor: #4A2E16;
+  --hero-monitor-backing: rgba(244, 232, 208, 0.18);
   --hero-shimmer-opacity: 0.05;
   --hero-scan-opacity: 0.08;
 }
@@ -439,6 +439,40 @@
 .hero-monitor-code > * {
   position: relative;
   z-index: 1;
+}
+
+.theme-light .hero-monitor-code {
+  top: 29.4%;
+  left: 22.4%;
+  width: 23.4%;
+  height: 27.4%;
+  padding: 1.1% 1.2% 1%;
+  color: var(--hero-monitor-text);
+  font-size: clamp(4.8px, 0.48vw, 6.5px);
+  line-height: 1.3;
+  text-shadow: none;
+  opacity: 0.85;
+  mix-blend-mode: normal;
+  transform: perspective(520px) rotateX(0.2deg) rotateY(-1.4deg) rotateZ(-2.2deg);
+}
+
+.theme-light .hero-type-line {
+  grid-template-columns: 2.1ch minmax(0, 1fr);
+  gap: 0.6ch;
+  min-height: 1.45em;
+}
+
+.theme-light .hero-type-line > span:last-child {
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.theme-light .hero-monitor-cursor {
+  left: 88%;
+  bottom: 10%;
+  width: 1.1%;
+  height: 4.6%;
+  box-shadow: none;
 }
 
 .hero-monitor-depth {
