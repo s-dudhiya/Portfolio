@@ -74,7 +74,6 @@
   --contact-button-border: rgba(217, 144, 47, 0.38);
   --contact-button-hover: rgba(217, 144, 47, 0.10);
   --cursor-glow: oklch(0.78 0.14 70 / 0.45);
-  --hero-image-filter: none;
   --hero-image-mask: radial-gradient(ellipse 75% 75% at center, black 55%, transparent 100%);
   --hero-scene-filter: none;
   --hero-scene-outline: transparent;
@@ -178,7 +177,6 @@
   --contact-button-border: rgba(80, 52, 30, 0.13);
   --contact-button-hover: color-mix(in srgb, var(--accent) 10%, transparent);
   --cursor-glow: rgba(177, 106, 22, 0.26);
-  --hero-image-filter: none;
   --hero-image-mask: radial-gradient(ellipse 66% 68% at 50% 49%, black 34%, rgba(0, 0, 0, 0.72) 50%, rgba(0, 0, 0, 0.26) 67%, transparent 84%);
   --hero-scene-filter: drop-shadow(0 30px 80px rgba(60, 40, 20, 0.12));
   --hero-scene-outline: rgba(244, 232, 208, 0.22);
@@ -350,8 +348,7 @@
 }
 
 .hero-coder-scene img {
-  filter: var(--hero-image-filter);
-  transition: filter 220ms ease;
+  transition: opacity 220ms ease;
 }
 
 .hero-coder-overlays {
