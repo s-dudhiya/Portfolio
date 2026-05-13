@@ -167,7 +167,7 @@ export function Hero() {
           href="/shabbir-resume.pdf"
           target="_blank"
           rel="noreferrer"
-          download
+          
           className="order-2 text-right font-mono text-[10px] leading-none tracking-[0.24em] text-warm-beige transition-colors hover:text-amber-glow sm:text-xs sm:tracking-[0.3em] lg:order-3 lg:flex-1 lg:basis-0"
         >
           [ RESUME ]
