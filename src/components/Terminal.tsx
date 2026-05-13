@@ -82,7 +82,7 @@ export function Terminal() {
       <div className="flex items-center justify-between border-b border-border/60 px-3 py-2 sm:px-4">
         <span className="font-mono text-xs text-warm-beige/80">&gt; terminal.exe</span>
         <div className="flex items-center gap-3 text-warm-gray">
-          <span className="font-mono text-xs leading-none">_</span>
+          <span className="font-mono text-xs leading-none">-</span>
           <span className="font-mono text-xs leading-none">▢</span>
           <span className="font-mono text-xs leading-none">×</span>
         </div>
