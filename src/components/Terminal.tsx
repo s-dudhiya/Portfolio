@@ -76,7 +76,7 @@ export function Terminal() {
 
   return (
     <div
-      className="terminal-glow relative mx-auto w-full max-w-3xl overflow-hidden border border-border/60 bg-terminal/95 shadow-2xl"
+      className="relative mx-auto w-full max-w-3xl overflow-hidden border border-border/60 bg-terminal/95 shadow-2xl"
       onClick={() => inputRef.current?.focus()}
     >
       <div className="flex items-center justify-between border-b border-border/60 px-3 py-2 sm:px-4">

@@ -134,23 +134,23 @@ export function Contact() {
         onSubmit={handleSubmit}
         onSubmitCapture={(event) => event.preventDefault()}
         noValidate
-        className="mt-10 border border-border/60 bg-background p-4 font-mono md:mt-12 md:p-5"
+        className="contact-form mt-10 border p-4 font-mono md:mt-12 md:p-5"
       >
         <div className="grid gap-3 md:grid-cols-2">
           <label className="block">
-            <span className="mb-2 block text-[10px] tracking-[0.3em] text-amber-dim">NAME</span>
+            <span className="contact-label mb-2 block text-[10px] tracking-[0.3em]">NAME</span>
             <input
               name="name"
               required
               value={formValues.name}
               onChange={(e) => setFormValues((prev) => ({ ...prev, name: e.target.value }))}
               disabled={status === "loading"}
-              className="w-full border border-border/60 bg-terminal/60 px-3 py-2 text-sm text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_var(--control-glow)] disabled:cursor-not-allowed disabled:opacity-60"
+              className="contact-field w-full border px-3 py-2 text-sm outline-none transition-colors disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="your name"
             />
           </label>
           <label className="block">
-            <span className="mb-2 block text-[10px] tracking-[0.3em] text-amber-dim">EMAIL</span>
+            <span className="contact-label mb-2 block text-[10px] tracking-[0.3em]">EMAIL</span>
             <input
               name="email"
               type="email"
@@ -158,14 +158,14 @@ export function Contact() {
               value={formValues.email}
               onChange={(e) => setFormValues((prev) => ({ ...prev, email: e.target.value }))}
               disabled={status === "loading"}
-              className="w-full border border-border/60 bg-terminal/60 px-3 py-2 text-sm text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_var(--control-glow)] disabled:cursor-not-allowed disabled:opacity-60"
+              className="contact-field w-full border px-3 py-2 text-sm outline-none transition-colors disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="your@email.com"
             />
           </label>
         </div>
 
         <label className="mt-3 block">
-          <span className="mb-2 block text-[10px] tracking-[0.3em] text-amber-dim">MESSAGE</span>
+          <span className="contact-label mb-2 block text-[10px] tracking-[0.3em]">MESSAGE</span>
           <textarea
             name="message"
             required
@@ -173,7 +173,7 @@ export function Contact() {
             value={formValues.message}
             onChange={(e) => setFormValues((prev) => ({ ...prev, message: e.target.value }))}
             disabled={status === "loading"}
-            className="w-full resize-none border border-border/60 bg-terminal/60 px-3 py-2 text-sm leading-relaxed text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_var(--control-glow)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="contact-field w-full resize-none border px-3 py-2 text-sm leading-relaxed outline-none transition-colors disabled:cursor-not-allowed disabled:opacity-60"
             placeholder="tell me what you're building"
           />
         </label>
@@ -182,7 +182,7 @@ export function Contact() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="border border-border/60 bg-background px-5 py-2 text-left text-[10px] tracking-[0.3em] text-warm-beige transition-colors hover:border-amber-dim hover:text-amber-glow hover:shadow-[0_0_18px_var(--control-glow)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="contact-submit border bg-transparent px-5 py-2 text-left text-[10px] tracking-[0.3em] transition-colors hover:text-amber-glow disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === "loading" ? "SENDING..." : "SEND"}
           </button>

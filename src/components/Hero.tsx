@@ -219,8 +219,8 @@ export function Hero() {
           style={{
             x: imageX,
             y: imageY,
-            maskImage:
-              "radial-gradient(ellipse 75% 75% at center, black 55%, transparent 100%)",
+            maskImage: "var(--hero-image-mask)",
+            WebkitMaskImage: "var(--hero-image-mask)",
           }}
         />
         <motion.div
