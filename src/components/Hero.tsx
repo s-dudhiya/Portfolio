@@ -164,7 +164,7 @@ export function Hero() {
           SHABBIR.DUDHIYA
         </motion.h1>
         <a
-          href="/resume.pdf"
+          href="/shabbir-resume.pdf"
           target="_blank"
           rel="noreferrer"
           download
