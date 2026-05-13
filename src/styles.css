@@ -239,6 +239,24 @@
   border-color: var(--contact-input-focus);
 }
 
+.contact-social-link {
+  border-color: var(--contact-button-border);
+  color: color-mix(in srgb, var(--contact-text) 62%, transparent);
+  background-color: color-mix(in srgb, var(--background) 90%, var(--accent) 10%);
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.contact-social-link:hover,
+.contact-social-link:focus-visible {
+  border-color: var(--contact-input-focus);
+  color: var(--amber-glow);
+  background-color: var(--contact-button-hover);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--contact-input-focus) 28%, transparent),
+    0 0 16px var(--control-glow);
+  outline: none;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);

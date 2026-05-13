@@ -2,15 +2,13 @@
 
 import { Section, SectionTitle } from "./Section";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { type FormEvent, useState } from "react";
 
-const contactItems = [
-  { icon: MapPin, label: "LOCATION", value: "Ahmedabad, Gujarat, India", href: undefined },
-  { icon: Mail, label: "EMAIL", value: "s.k.dudhiyawala@gmail.com", href: "mailto:s.k.dudhiyawala@gmail.com" },
-  { icon: Phone, label: "PHONE", value: "+91 8140099572", href: "tel:+918140099572" },
-  { icon: Github, label: "GITHUB", value: "github.com/s-dudhiya", href: "https://github.com/s-dudhiya" },
-  { icon: Linkedin, label: "LINKEDIN", value: "linkedin.com/in/shabbir-dudhiya", href: "https://in.linkedin.com/in/shabbir-dudhiya" },
+const socialLinks = [
+  { icon: Github, label: "GitHub", href: "https://github.com/s-dudhiya" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://in.linkedin.com/in/shabbir-dudhiya" },
+  { icon: Mail, label: "Email", href: "mailto:s.k.dudhiyawala@gmail.com" },
 ];
 
 type FormStatus = "idle" | "loading" | "success" | "error";
@@ -100,7 +98,7 @@ export function Contact() {
   }
 
   return (
-    <Section id="contact" className="pb-20 md:pb-32 lg:pb-40">
+    <Section id="contact" className="pb-14 md:pb-20 lg:pb-24">
       <SectionTitle index="06" title="CONTACT" subtitle="// open.channel" />
 
       <motion.h3
@@ -174,7 +172,7 @@ export function Contact() {
             onChange={(e) => setFormValues((prev) => ({ ...prev, message: e.target.value }))}
             disabled={status === "loading"}
             className="contact-field w-full resize-none border px-3 py-2 text-sm leading-relaxed outline-none transition-colors disabled:cursor-not-allowed disabled:opacity-60"
-            placeholder="tell me what you're building"
+            placeholder="Hi Shabbir, great connecting with you..."
           />
         </label>
 
@@ -198,48 +196,45 @@ export function Contact() {
         </div>
       </motion.form>
 
-      <div className="mt-8 grid gap-px bg-border/60 md:mt-12 md:grid-cols-2">
-        {contactItems.map((c, i) => {
-          const Icon = c.icon;
-          const inner = (
-            <>
-              <div className="mb-4 flex items-center gap-3 font-mono text-[10px] tracking-[0.3em] text-amber-dim">
-                <Icon className="h-3.5 w-3.5" />
-                {c.label}
-              </div>
-              <div className="break-words font-mono text-sm text-warm-beige transition-colors group-hover:text-amber-glow">
-                {c.value}
-              </div>
-            </>
-          );
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="mt-5 border-t border-border/60 py-4 font-mono md:mt-6"
+      >
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div className="mb-2 flex items-center gap-3 text-[10px] tracking-[0.3em] text-amber-dim">
+              <MapPin className="h-3.5 w-3.5" />
+              LOCATION
+            </div>
+            <div className="text-sm text-warm-beige">Ahmedabad, Gujarat, India</div>
+          </div>
 
-          return (
-            <motion.div
-              key={c.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-background"
-            >
-              {c.href ? (
+          <div className="flex items-center gap-2 sm:justify-end">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+
+              return (
                 <a
-                  href={c.href}
-                  target={c.href.startsWith("http") ? "_blank" : undefined}
-                  rel={c.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group block bg-background p-6 transition-colors hover:bg-card/40 hover:shadow-[0_0_18px_var(--control-glow)]"
+                  key={social.label}
+                  href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noreferrer" : undefined}
+                  aria-label={social.label}
+                  title={social.label}
+                  className="contact-social-link flex h-9 w-9 items-center justify-center border"
                 >
-                  {inner}
+                  <Icon className="h-4 w-4" />
                 </a>
-              ) : (
-                <div className="group block p-6">{inner}</div>
-              )}
-            </motion.div>
-          );
-        })}
-      </div>
+              );
+            })}
+          </div>
+        </div>
+      </motion.div>
 
-      <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-center font-mono text-[10px] tracking-[0.22em] text-warm-gray sm:tracking-[0.3em] md:mt-24 md:flex-row">
+      <div className="mt-2 flex flex-col items-center justify-between gap-3 border-t border-border/60 pt-4 text-center font-mono text-[10px] tracking-[0.22em] text-warm-gray sm:tracking-[0.3em] md:mt-3 md:flex-row md:pt-5">
         <span>© 2026 SHABBIR DUDHIYA</span>
         <span className="cursor-blink">SYSTEM ONLINE</span>
       </div>
