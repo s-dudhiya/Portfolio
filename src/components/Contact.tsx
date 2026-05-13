@@ -242,7 +242,6 @@ export function Contact() {
       <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-center font-mono text-[10px] tracking-[0.22em] text-warm-gray sm:tracking-[0.3em] md:mt-24 md:flex-row">
         <span>© 2026 SHABBIR DUDHIYA</span>
         <span className="cursor-blink">SYSTEM ONLINE</span>
-        <span>BUILT WITH ☕ + PYTHON</span>
       </div>
     </Section>
   );
