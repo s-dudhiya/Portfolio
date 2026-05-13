@@ -10,7 +10,6 @@ import coderDarkImg from "@/assets/coder-workspace-dark.png";
 import coderLightImg from "@/assets/coder-workspace-light.png";
 import { useTheme } from "@/hooks/use-theme";
 import { Terminal } from "./Terminal";
-import { ThemeToggle } from "./ThemeToggle";
 
 const pythonCode = [
   "import time",
@@ -168,7 +167,6 @@ export function Hero() {
           SHABBIR.DUDHIYA
         </motion.h1>
         <div className="order-2 flex items-center justify-end gap-3 lg:order-3 lg:flex-1 lg:basis-0">
-          <ThemeToggle />
           <button
             type="button"
             onClick={() => {

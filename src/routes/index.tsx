@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CustomCursor } from "@/components/CustomCursor";
 import { SideNav } from "@/components/SideNav";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Projects } from "@/components/Projects";
@@ -33,6 +34,9 @@ function Index() {
     <div className="grain-overlay vignette relative min-h-screen w-full overflow-x-hidden bg-background">
       <CustomCursor />
       <SideNav />
+      <div className="fixed right-[18px] bottom-[18px] z-[120] lg:right-9 lg:top-7 lg:bottom-auto">
+        <ThemeToggle />
+      </div>
       <main className="relative w-full lg:pr-44 xl:pr-48">
         <Hero />
         <About />
