@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import coderImg from "@/assets/coder-workspace.png";
 import { Terminal } from "./Terminal";
+import { ThemeToggle } from "./ThemeToggle";
 
 const pythonCode = [
   "import time",
@@ -163,15 +164,18 @@ export function Hero() {
         >
           SHABBIR.DUDHIYA
         </motion.h1>
-        <button
+        <div className="order-2 flex items-center justify-end gap-3 lg:order-3 lg:flex-1 lg:basis-0">
+          <ThemeToggle />
+          <button
             type="button"
             onClick={() => {
               window.open("/shabbir-resume.pdf", "_blank", "noopener,noreferrer");
             }}
-            className="order-2 text-right font-mono text-[10px] leading-none tracking-[0.24em] text-warm-beige transition-colors hover:text-amber-glow sm:text-xs sm:tracking-[0.3em] lg:order-3 lg:flex-1 lg:basis-0"
+            className="text-right font-mono text-[10px] leading-none tracking-[0.24em] text-warm-beige transition-colors hover:text-amber-glow sm:text-xs sm:tracking-[0.3em]"
           >
             [ RESUME ]
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Hero center content */}

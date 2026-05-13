@@ -9,6 +9,20 @@
   </head>
 
   <body>
+    <script>
+      (() => {
+        const key = "portfolio-theme";
+        const saved = window.localStorage.getItem(key);
+        const theme =
+          saved === "dark" || saved === "light"
+            ? saved
+            : window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+
+        document.documentElement.classList.add(`theme-${theme}`);
+      })();
+    </script>
     <script type="module" src="/src/start.ts"></script>
   </body>
 </html>

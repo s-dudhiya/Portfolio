@@ -36,7 +36,7 @@ export function CustomCursor() {
           height: hovering ? 28 : 14,
           transform: "translate(-50%, -50%)",
           border: "1px solid var(--amber-glow)",
-          boxShadow: "0 0 8px oklch(0.78 0.14 70 / 0.45)",
+          boxShadow: "0 0 8px var(--cursor-glow)",
           mixBlendMode: "difference",
         }}
       />

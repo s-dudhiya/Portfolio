@@ -145,7 +145,7 @@ export function Contact() {
               value={formValues.name}
               onChange={(e) => setFormValues((prev) => ({ ...prev, name: e.target.value }))}
               disabled={status === "loading"}
-              className="w-full border border-border/60 bg-terminal/60 px-3 py-2 text-sm text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_rgba(245,158,11,0.08)] disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full border border-border/60 bg-terminal/60 px-3 py-2 text-sm text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_var(--control-glow)] disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="your name"
             />
           </label>
@@ -158,7 +158,7 @@ export function Contact() {
               value={formValues.email}
               onChange={(e) => setFormValues((prev) => ({ ...prev, email: e.target.value }))}
               disabled={status === "loading"}
-              className="w-full border border-border/60 bg-terminal/60 px-3 py-2 text-sm text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_rgba(245,158,11,0.08)] disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full border border-border/60 bg-terminal/60 px-3 py-2 text-sm text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_var(--control-glow)] disabled:cursor-not-allowed disabled:opacity-60"
               placeholder="your@email.com"
             />
           </label>
@@ -173,7 +173,7 @@ export function Contact() {
             value={formValues.message}
             onChange={(e) => setFormValues((prev) => ({ ...prev, message: e.target.value }))}
             disabled={status === "loading"}
-            className="w-full resize-none border border-border/60 bg-terminal/60 px-3 py-2 text-sm leading-relaxed text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_rgba(245,158,11,0.08)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full resize-none border border-border/60 bg-terminal/60 px-3 py-2 text-sm leading-relaxed text-warm-beige outline-none transition-colors placeholder:text-warm-gray/60 focus:border-amber-dim focus:shadow-[0_0_16px_var(--control-glow)] disabled:cursor-not-allowed disabled:opacity-60"
             placeholder="tell me what you're building"
           />
         </label>
@@ -182,14 +182,14 @@ export function Contact() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="border border-border/60 bg-background px-5 py-2 text-left text-[10px] tracking-[0.3em] text-warm-beige transition-colors hover:border-amber-dim hover:text-amber-glow hover:shadow-[0_0_18px_rgba(245,158,11,0.1)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="border border-border/60 bg-background px-5 py-2 text-left text-[10px] tracking-[0.3em] text-warm-beige transition-colors hover:border-amber-dim hover:text-amber-glow hover:shadow-[0_0_18px_var(--control-glow)] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === "loading" ? "SENDING..." : "SEND"}
           </button>
           {statusMessage && (
             <span
               className={`text-[10px] tracking-[0.3em] ${
-                status === "success" ? "text-amber-glow" : "text-[oklch(0.65_0.16_30)]"
+                status === "success" ? "text-amber-glow" : "text-[var(--terminal-error)]"
               }`}
             >
               {statusMessage}
@@ -227,7 +227,7 @@ export function Contact() {
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel={c.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group block bg-background p-6 transition-colors hover:bg-card/40 hover:shadow-[0_0_18px_rgba(245,158,11,0.08)]"
+                  className="group block bg-background p-6 transition-colors hover:bg-card/40 hover:shadow-[0_0_18px_var(--control-glow)]"
                 >
                   {inner}
                 </a>

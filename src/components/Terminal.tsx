@@ -100,7 +100,7 @@ export function Terminal() {
                 <span className="text-warm-beige">{l.text}</span>
               </>
             ) : l.kind === "err" ? (
-              <span className="text-[oklch(0.65_0.16_30)]">{l.text}</span>
+              <span className="text-[var(--terminal-error)]">{l.text}</span>
             ) : (
               <span className="text-warm-beige/85">{l.text || "\u00a0"}</span>
             )}
