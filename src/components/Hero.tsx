@@ -163,15 +163,15 @@ export function Hero() {
         >
           SHABBIR.DUDHIYA
         </motion.h1>
-        <a
-          href="/shabbir-resume.pdf"
-          target="_blank"
-          rel="noreferrer"
-          
-          className="order-2 text-right font-mono text-[10px] leading-none tracking-[0.24em] text-warm-beige transition-colors hover:text-amber-glow sm:text-xs sm:tracking-[0.3em] lg:order-3 lg:flex-1 lg:basis-0"
-        >
-          [ RESUME ]
-        </a>
+        <button
+            type="button"
+            onClick={() => {
+              window.open("/shabbir-resume.pdf", "_blank", "noopener,noreferrer");
+            }}
+            className="order-2 text-right font-mono text-[10px] leading-none tracking-[0.24em] text-warm-beige transition-colors hover:text-amber-glow sm:text-xs sm:tracking-[0.3em] lg:order-3 lg:flex-1 lg:basis-0"
+          >
+            [ RESUME ]
+        </button>
       </div>
 
       {/* Hero center content */}
