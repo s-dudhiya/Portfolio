@@ -19,7 +19,7 @@ export function About() {
               <span className="tracking-[0.2em]">CURRENTLY</span>
             </div>
             <p className="text-warm-beige">Python Developer</p>
-            <p className="text-warm-gray">@ Atowiz Solutions</p>
+            <p className="text-warm-gray">@ Actowiz Solutions</p>
             <p className="mt-1 text-warm-gray">Ahmedabad, India</p>
             <div className="mt-6 space-y-1 text-warm-gray">
               <div>{"> focus  : automation"}</div>
@@ -44,7 +44,7 @@ export function About() {
             products.
           </p>
           <p className="text-warm-gray">
-            Currently, I work as a Python Developer at <span className="text-amber-soft">Atowiz Solutions</span> in
+            Currently, I work as a Python Developer at <span className="text-amber-soft">Actowiz Solutions</span> in
             Ahmedabad, where I primarily work on web scraping, browser automation, and large-scale
             data extraction systems using tools like Playwright, Scrapy, Requests, DrissionPage, lxml,
             and Parsel.

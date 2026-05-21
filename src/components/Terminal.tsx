@@ -14,7 +14,7 @@ const COMMANDS: Record<string, () => string[]> = {
   ],
   about: () => [
     "Shabbir Dudhiya — Python automation engineer & full-stack developer.",
-    "Based in Ahmedabad, India. Currently @ Atowiz Solutions.",
+    "Based in Ahmedabad, India. Currently @ Actowiz Solutions.",
   ],
   work: () => [
     "→ Spendova — expense tracking product",
